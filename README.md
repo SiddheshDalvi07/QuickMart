@@ -13,7 +13,7 @@
 10. [License](#license)
 
 ## Introduction
-Django eKart is a comprehensive e-commerce application built with Django, designed to provide a robust and scalable solution for online retail businesses. This project includes features like user authentication, product management, order processing, and more.
+QuickMart is a comprehensive e-commerce application built with Django, designed to provide a robust and scalable solution for online retail businesses. This project includes features like user authentication, product management, order processing, and more.
 
 ## Features
 - User Registration and Authentication
@@ -26,7 +26,7 @@ Django eKart is a comprehensive e-commerce application built with Django, design
 - Search and Filtering
 
 ## Installation
-To get started with Django eKart, follow these steps:
+To get started with QuickMart, follow these steps:
 
 ### Prerequisites
 - Python 3.8+
