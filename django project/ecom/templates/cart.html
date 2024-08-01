@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+
+{% load static %}
+
+
+<!-- Cart Start -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-9">
+            <h5 class="bg-danger">Customer Details</h5>
+            <p><strong>Email: {{request.user.username}}</strong></p>
+            <h5 class="bg-danger">Cart Details</h5>
+            <div class="row">
+                {% for item in product %}
+                <div class="col-md-4">
+                    <img src="{{item.pid.pimage.url}}" alt="" class="img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <p><strong>Name: {{item.pid.name}}</strong></p>
+                    <p><strong>Price:{{item.pid.price}}</strong></p>
+                    <p><strong>Category: {% if item.pid.category == 1 %}
+                        Mobiles
+                        {% elif item.pid.category == 2 %}
+                        Clothes
+                        {% else %}
+                        Shoes 
+                        {% endif %}
+                    </strong></p>
+                    <p><strong>Product Details: {{item.pid.pdetails}}</strong></p>
+                    <p><strong>Quantity:</strong></p>
+                    <a href="/updateqty/{{item.id}}/0"> <button class="btn btn-danger">-</button></a>
+                    <input type="number" value="{{item.quantity}}">
+                   <a href="/updateqty/{{item.id}}/1"> <button class="btn btn-success">+</button></a>
+                  <a href="/remove/{{item.id}}"><button class="btn btn-danger">Remove</button></a>  
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h5 class="bg-danger">Total Amount</h5>
+  
+   <p><Strong>Total ({{np}} Items): Rs. {{total_price}}</Strong></p>
+           
+           <a href="/placeorder"> <button class="btn btn-primary">Place Order</button></a>
+        </div>
+      </div>   
+</div>
+ 
+<!-- Cart End -->
+
+{% endblock 'content' %}

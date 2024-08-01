@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block 'content' %}
+{% load static %}
+<div class="container-fluid">
+<!-- product start -->
+<div class="row">
+  <div class="col-md-3 mt-3 bg-body-tertiary">
+    <h5>Filter By Category</h5>
+    <hr>
+    <p><a href="/">All</a></p>
+    <p><a href="/catfilter/1">By Mobile</a></p>
+    <p><a href="/catfilter/2">By Clothes</a></p>
+    <p><a href="/catfilter/3">By Shoes</a></p>
+    <hr>
+    <h5>
+      Filter by Price
+    </h5>
+    <hr>
+    <form action="/range" method="POST">
+      {% csrf_token %}
+<div class="mb-3">
+<label class="form-label">Min</label>
+<input type="number" name="min" class="form-control">
+</div>
+<div class="mb-3">
+<label class="form-label">Max</label>
+<input type="number" name="max" class="form-control">
+</div>
+<button type="submit" class="btn btn-primary">Search</button>
+</form>
+<hr>
+<h5 class="mt-3">Sort By Price</h5>
+<hr>
+<p><a href="/sort/0">High to Low</a></p>
+<p><a href="/sort/1">Low to High</a></p>
+  </div>
+  <!-- card start -->
+  <div class="col-md-9">
+    
+    <div class="row ms-3 mt-4">
+      {% for prod in products %}
+      <div class="col-md-4"><div class="card" style="width: 100%;">
+        <img src="{{prod.pimage.url}}" class="card-img-top img-fluid" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{prod.name}}</h5>
+          <p class="card-text">Price: {{prod.price}}</p>
+          <p class="card-text">{{prod.pdetails}}</p>
+          <a href="/productdetail/{{prod.id}}" class="btn btn-primary">See Details</a>
+        </div>
+      </div></div>
+      {% endfor %}
+    </div> 
+  </div>
+  <!-- card end -->
+
+</div>
+
+<!-- product end -->
+
+
+</div>
+ {% endblock 'content' %}

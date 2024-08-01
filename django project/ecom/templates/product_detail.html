@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block 'content' %}
+{% load static %}
+    <div class="container">
+
+        <!-- product detail start --> 
+        <div class="row"> 
+            <div class="col-md-8 mt-3 mx-auto">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="{{product.pimage.url}}" alt="" class="img-thumbnail rounded float-start">
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Product Name: {{product.name}}</h3>
+                        <hr>
+                        <h4>Product Price: {{product.price}}</h4>
+                        <hr>
+                        <h5>Product Description:{{product.pdetails}}</h5>
+                        <hr>
+                        <a href="/addtocart/{{product.id}}"><button class="btn btn-primary">Add to cart</button></a>
+                        <a href="/viewcart"><button class="btn btn-primary">View Cart</button></a>
+                        <button class="btn btn-primary">Shop More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product detail end -->
+
+       </div>
+       {% endblock 'content' %} 

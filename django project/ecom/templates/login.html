@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <title>Ekart|Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4 mx-auto shadow p-3 bg-success-subtle rounded mt-5">
+                <h2>User Login</h2>
+                {% if error %}
+                <div class="alert alert-danger">{{error}}</div>
+                {% endif %}
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Username</strong></label>
+                        <input name="uname" class="form-control" type="text" placeholder="Username">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label"><strong>Password</strong></label>
+                        <input name="upass" class="form-control" type="password" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                        <input type="submit" value="Login" class="btn btn-danger">
+                        Don't hava an account? <a href="/register">Register</a>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>

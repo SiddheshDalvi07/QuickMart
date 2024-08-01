@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+
+{% load static %}
+<div class="container-fluid">
+
+
+            <!-- cart start -->
+            <div class="row mt-3">
+                <div class="col-md-9 ">
+                    <h5 class="bg-body-secondary p-2">Customer Details</h5>
+                    <p><strong>Email: abc@gmail.com</strong></p>
+                    <h5 class="bg-body-secondary p-2">Order Details</h5>
+                    <div class="row">
+                        {% for item in orders %}
+                        <div class="col-md-4">
+                            <img src="{{item.pid.pimage.url}}" alt="" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-8">
+                            <p><strong>Name: {{item.pid.name}}</strong></p>
+                            <p><strong>Price: {{item.pid.price}}</strong></p>
+                            <p><strong>Category:{% if item.pid.category == 1 %}
+                                Mobiles
+                                {% elif item.pid.category == 2 %}
+                                Clothes
+                                {% else %}
+                                Shoes 
+                                {% endif %}</strong></p>
+                            <p><strong>Details: {{item.pid.pdetails}}</strong></p>
+                            <p><strong>Quantity: {{item.quantity}}</strong></p>
+                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="bg-body-secondary p-2">Total Amount</h5>
+                    <p><Strong>Total ({{np}} Items): Rs. {{total_price}}</Strong></p>
+                    <a href="/pay"><button class="btn btn-primary">Make Payment</button></a>
+                </div>
+            </div>
+            <!-- cart end  -->
+
+
+</div>
+
+
+{% endblock 'content' %}
