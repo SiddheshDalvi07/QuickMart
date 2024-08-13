@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block 'content' %}
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h1>Our Services</h1>
+        <p class="lead">At QuickMart, we offer a wide range of services to meet all your shopping needs.</p>
+    </div>
+
+    <div class="row">
+        <!-- Service 1: Product Sourcing -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- <img src="{% static 'images/product_sourcing.jpg' %}" class="card-img-top" alt="Product Sourcing"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Product Sourcing</h5>
+                    <p class="card-text">We source the best products from top brands, ensuring quality and variety for all your shopping needs.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 2: Fast Delivery -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- <img src="{% static 'images/fast_delivery.jpg' %}" class="card-img-top" alt="Fast Delivery"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Fast Delivery</h5>
+                    <p class="card-text">Enjoy quick and reliable delivery services, with options for same-day or next-day shipping on select products.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 3: Customer Support -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- <img src="{% static 'images/customer_support.jpg' %}" class="card-img-top" alt="Customer Support"> -->
+                <div class="card-body">
+                    <h5 class="card-title">24/7 Customer Support</h5>
+                    <p class="card-text">Our dedicated customer support team is available around the clock to assist you with any queries or issues.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 4: Easy Returns -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- <img src="{% static 'images/easy_returns.jpg' %}" class="card-img-top" alt="Easy Returns"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Easy Returns</h5>
+                    <p class="card-text">Hassle-free returns with our simple and straightforward return policy, making shopping with us risk-free.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 5: Secure Payments -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- <img src="{% static 'images/secure_payments.jpg' %}" class="card-img-top" alt="Secure Payments"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Secure Payments</h5>
+                    <p class="card-text">We offer multiple secure payment options, ensuring your transactions are safe and protected.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service 6: Loyalty Programs -->
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- <img src="{% static 'images/loyalty_program.jpg' %}" class="card-img-top" alt="Loyalty Programs"> -->
+                <div class="card-body">
+                    <h5 class="card-title">Loyalty Programs</h5>
+                    <p class="card-text">Join our loyalty program to earn rewards and exclusive discounts on future purchases.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock 'content' %}

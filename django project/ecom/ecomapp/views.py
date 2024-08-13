@@ -19,7 +19,11 @@ def home(request):
     # print(context['products'])
     return render(request,"index.html",context)
 
+def about(request):
+    return render(request,"about.html")
 
+def service(request):
+    return render(request,"service.html")
 
 def productdetail(request,pid):
     context = {}
@@ -59,7 +63,20 @@ def pricerange(request):
         return render(request,"index.html",context)
 
 
-
+def search(request):
+    """
+    Handle search requests
+    """
+    context = {}
+    query = request.GET.get('query')
+    context['query'] = query
+    if query:
+        results = Product.objects.filter(Q(name__icontains=query) | Q(pdetails__icontains=query))
+        context['results'] = results
+        return render(request, 'search.html', context)
+    else:
+        results = Product.objects.none()
+        return render(request, 'search.html', context)
 
 
 
@@ -226,7 +243,9 @@ def makepayment(request):
         data = { "amount": 500, "currency": "INR", "receipt": "oid" }
         payment = client.order.create(data=data)
         print(payment)
-        
+        c =Cart.objects.filter(uid=request.user)
+        c.delete()
+        o.delete()
         return render(request,"pay.html",context)
     
 

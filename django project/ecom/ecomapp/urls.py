@@ -5,6 +5,8 @@ from . import views
 
 urlpatterns=[
     path('',(views.home)),
+    path('about/',(views.about)),
+    path('service/',(views.service)),
     path('productdetail/<pid>',(views.productdetail)),
     path('catfilter/<cid>',(views.catfilter)),
     path('sort/<s>',(views.sortbyprice)),
@@ -19,6 +21,10 @@ urlpatterns=[
     path('placeorder/',views.placeorder),
     path('pay/',views.makepayment),
     path('senduseremail/',views.senduseremail),
+    path('search/', views.search, name='search'),
+    # path('viewcart/search/', views.search, name='search'),
+    # path('viewcart/search/search', views.search, name='search'),
+    
 ]
 
 if settings.DEBUG:
